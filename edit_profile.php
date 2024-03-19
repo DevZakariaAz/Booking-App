@@ -8,7 +8,6 @@ if (!isset($_SESSION['id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Handle form submission to update user information
     $newNom = $_POST['new_nom'];
     $newPrenom = $_POST['new_prenom'];
     $newEmail = $_POST['new_email'];
