@@ -31,12 +31,10 @@ if (isset($_GET['numVersion'])) {
                       VALUES (:numVersion, NOW(),:idUtilisateur,:idFacture)";
             $purchaseStmt = $conn->prepare($purchaseQuery);
 
-            // You need to replace the placeholders with actual values
             $purchaseStmt->bindParam(':numVersion', $numVersion);
             $purchaseStmt->bindParam(':idUtilisateur', $_SESSION['id']);
             $purchaseStmt->bindParam(':idFacture', $numTickets);
 
-            // Execute the query
             $purchaseStmt->execute();
         }
     } catch (PDOException $e) {
